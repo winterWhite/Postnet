@@ -9,38 +9,18 @@ chai.use(sinonChai);
 var main = require("../lib/main.js");
 
 
-describe("测试FizzBuzz", function(){
+describe("Trans ZipCode", function(){
     sinon.spy(console, 'log');
 
-    it("测试普通数字输入", function(){
-
-        var result = main(1);
-        var expect_string = '1';
+    it('Trans 95713 to ||:|:::|:|:|:::|:::||::||::|:|:|', function() {
+    	var result = main('95713');
         
-        expect(expect_string).to.equal(result);
+        expect(result).to.equal('||:|:::|:|:|:::|:::||::||::|:|:|');
     });
 
-    it("测试3的倍数输入", function(){
-
-        var result = main(3);
-        var expect_string = 'Fizz';
-
-        expect(expect_string).to.equal(result);
-    });
-
-    it("测试5的倍数输入", function(){
-
-        var result = main(5);
-        var expect_string = 'Buzz';
-
-        expect(expect_string).to.equal(result);
-    });
-
-    it("测试3和5的倍数输入", function(){
-
-        var result = main(15);
-        var expect_string = 'FizzBuzz';
-
-        expect(expect_string).to.equal(result);
+    it('Trans ||:|:::|:|:|:::|:::||::||::|:|:| to 95713', function() {
+    	var result = main('||:|:::|:|:|:::|:::||::||::|:|:|');
+        
+        expect(result).to.equal('95713');
     });
 });
