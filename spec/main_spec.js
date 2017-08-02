@@ -13,10 +13,12 @@ describe("Trans ZipCode", function(){
     sinon.spy(console, 'log');
 
     it('Trans 95713 to ||:|:::|:|:|:::|:::||::||::|:|:|', function() {
-    	var result = main('95713');
+    	let postCode = '95713'
+    	var barCode = main(postCode);
         
-        expect(result).to.equal('||:|:::|:|:|:::|:::||::||::|:|:|');
+        expect(barCode).to.equal('||:|:::|:|:|:::|:::||::||::|:|:|');
     });
+
 
     it('Trans ||:|:::|:|:|:::|:::||::||::|:|:| to 95713', function() {
     	var result = main('||:|:::|:|:|:::|:::||::||::|:|:|');

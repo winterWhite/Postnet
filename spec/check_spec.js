@@ -9,7 +9,7 @@ chai.use(sinonChai);
 var checkCode = require("../lib/getCheckCode.js");
 
 
-describe("Split ZipCode", function(){
+describe("Get checkCode", function(){
 
     it("95713输入返回5", function(){
 
